@@ -370,7 +370,7 @@ function Servicios() {
     {
       icon: <Bike size={28} color="var(--color-caramel)" strokeWidth={1.5} />,
       title: "Entrega a domicilio",
-      desc: "Llevamos Café 45 hasta tu puerta. Pide por teléfono o WhatsApp y lo recibís en casa.",
+      desc: "Llevamos Café 45 hasta tu puerta. Pide por teléfono o WhatsApp y recibelo en casa.",
     },
   ];
 
