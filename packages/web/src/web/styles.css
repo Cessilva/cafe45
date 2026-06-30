@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-espresso:   #2C1A0E;
+  --color-caramel:    #7B4A2D;
+  --color-cream:      #F5ECD7;
+  --color-parchment:  #EAD9BC;
+  --color-olive:      #5C6B4A;
+  --color-fog:        #D9CDB8;
+  --color-white:      #FEFAF4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-espresso);
+}
+
+/* ---------- Typography minimum sizes ---------- */
+p, a, span, li {
+  font-size: max(1.05rem, 18px);
+}
+
+/* Ensure small labels/badges are still readable */
+.label-small {
+  font-size: max(0.75rem, 12px);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+  p, a, span, li {
+    font-size: max(0.9375rem, 15px);
+  }
+}
+
+/* iPad / Tablet (768px – 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+  p, a, span, li {
+    font-size: max(1.05rem, 18px);
+  }
+  h1 {
+    font-size: clamp(3.2rem, 7vw, 5rem);
+  }
+  h2 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* iPad Pro (1024px – 1366px) */
+@media (min-width: 1024px) and (max-width: 1400px) {
+  html {
+    font-size: 23px;
+  }
+  p, a, span, li {
+    font-size: max(1.15rem, 22px);
+  }
+  h1 {
+    font-size: clamp(5rem, 9vw, 7rem) !important;
+  }
+  h2 {
+    font-size: clamp(2.6rem, 5vw, 3.5rem);
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  #inicio h1 {
+    font-size: clamp(7rem, 12vw, 10rem) !important;
+  }
+  #inicio p {
+    font-size: max(2rem, 36px);
+  }
+  #inicio a {
+    font-size: max(1.6rem, 30px);
+  }
+  #inicio span {
+    font-size: max(1.4rem, 26px);
+  }
+}
+
+/* ---------- Nav responsive ---------- */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.mobile-menu-btn {
+  display: none !important;
+}
+
+.mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  .mobile-drawer {
+    display: flex;
+  }
+}
+
+/* ---------- Servicios grid ---------- */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ---------- Menu grid ---------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.menu-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* ---------- Contacto grid ---------- */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- Footer grid ---------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+/* ---------- Horarios padding responsive ---------- */
+.horario-row {
+  padding: 18px 32px;
+}
+
+@media (max-width: 480px) {
+  .horario-row {
+    padding: 14px 16px;
+  }
+}
+
+/* ---------- Section padding responsive ---------- */
+.section-padding {
+  padding: 96px 24px;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding: 64px 16px;
+  }
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}
+
+/* ---------- Footer bottom row ---------- */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
