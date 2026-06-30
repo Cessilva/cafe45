@@ -14,6 +14,12 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import {
+  WhiskIcon,
+  CroissantIcon,
+  ClockLineIcon,
+  MapPinLineIcon,
+} from "../components/cafe-icons";
 
 // ---------- Reveal hook ----------
 function useReveal() {
@@ -62,17 +68,23 @@ function Nav() {
           margin: "0 auto",
         }}
       >
-        <span
+        <a
+          href="#inicio"
           style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "1.4rem",
-            fontWeight: 700,
-            color: "var(--color-espresso)",
-            letterSpacing: "0.02em",
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
           }}
         >
-          Café 45
-        </span>
+          <img
+            src="/logo-cafe45.png"
+            alt="Café 45"
+            style={{
+              height: "clamp(36px, 5vw, 48px)",
+              width: "auto",
+            }}
+          />
+        </a>
 
         {/* Desktop links */}
         <div className="nav-links">
@@ -133,19 +145,40 @@ function Nav() {
             background: "rgba(245,236,215,0.96)",
           }}
         >
-          {["Servicios", "Menú", "Horarios", "Contacto"].map((item) => (
+          {[
+            {
+              label: "Servicios",
+              href: "#servicios",
+              icon: <WhiskIcon size={20} />,
+            },
+            { label: "Menú", href: "#menú", icon: <CroissantIcon size={20} /> },
+            {
+              label: "Horarios",
+              href: "#horarios",
+              icon: <ClockLineIcon size={20} />,
+            },
+            {
+              label: "Contacto",
+              href: "#contacto",
+              icon: <MapPinLineIcon size={20} />,
+            },
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               onClick={() => setMobileOpen(false)}
               style={{
                 color: "var(--color-caramel)",
                 textDecoration: "none",
                 fontWeight: 500,
                 fontSize: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
               }}
             >
-              {item}
+              {item.icon}
+              {item.label}
             </a>
           ))}
         </div>
@@ -371,6 +404,7 @@ function Servicios() {
             }}
           >
             Siempre a tu manera
+            <WhiskIcon size={28} />
           </h2>
         </div>
 
@@ -578,6 +612,7 @@ function MenuPreview() {
             }}
           >
             Nuestro Menú
+            <CroissantIcon size={28} />
           </h2>
         </div>
 
@@ -702,6 +737,7 @@ function Horarios() {
           </span>
           <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", marginTop: 8 }}>
             Horarios
+            <ClockLineIcon size={28} />
           </h2>
         </div>
 
@@ -824,6 +860,7 @@ function Contacto() {
           </span>
           <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", marginTop: 8 }}>
             Visítanos
+            <MapPinLineIcon size={28} />
           </h2>
         </div>
 
@@ -1008,16 +1045,15 @@ function Footer() {
       >
         {/* Brand */}
         <div>
-          <h3
+          <img
+            src="/logo-cafe45.png"
+            alt="Café 45"
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "1.5rem",
-              margin: "0 0 12px",
-              color: "var(--color-cream)",
+              height: "clamp(56px, 8vw, 72px)",
+              width: "auto",
+              marginBottom: 12,
             }}
-          >
-            Café 45
-          </h3>
+          />
           <p
             style={{
               color: "rgba(245,236,215,0.6)",

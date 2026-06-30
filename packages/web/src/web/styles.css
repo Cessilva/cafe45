@@ -259,6 +259,10 @@ p, a, span, li {
     gap: 32px;
     text-align: center;
   }
+  .footer-grid img {
+    margin: 0 auto;
+    height: 90px !important;
+  }
 }
 
 /* ---------- Horarios padding responsive ---------- */
