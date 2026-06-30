@@ -6,13 +6,14 @@ import "./styles.css";
 import App from "./app.tsx";
 
 const queryClient = new QueryClient();
+const base = import.meta.env.BASE_URL.replace(/\/$/, "") || "";
 
 createRoot(document.getElementById("root")!).render(
-	<StrictMode>
-		<QueryClientProvider client={queryClient}>
-			<Router>
-				<App />
-			</Router>
-		</QueryClientProvider>
-	</StrictMode>,
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <Router base={base}>
+        <App />
+      </Router>
+    </QueryClientProvider>
+  </StrictMode>,
 );
