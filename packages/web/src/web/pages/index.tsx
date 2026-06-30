@@ -306,17 +306,22 @@ function Hero() {
             textDecoration: "none",
             fontWeight: 500,
             fontSize: "1rem",
-            border: "1.5px solid var(--color-fog)",
-            transition: "border-color 0.2s",
+            border: "1.5px solid var(--color-caramel)",
+            transition:
+              "border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s",
           }}
-          onMouseOver={(e) =>
-            ((e.currentTarget as HTMLAnchorElement).style.borderColor =
-              "var(--color-caramel)")
-          }
-          onMouseOut={(e) =>
-            ((e.currentTarget as HTMLAnchorElement).style.borderColor =
-              "var(--color-fog)")
-          }
+          onMouseOver={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.borderColor =
+              "var(--color-espresso)";
+            (e.currentTarget as HTMLAnchorElement).style.transform =
+              "translateY(-2px)";
+          }}
+          onMouseOut={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.borderColor =
+              "var(--color-caramel)";
+            (e.currentTarget as HTMLAnchorElement).style.transform =
+              "translateY(0)";
+          }}
         >
           Ir al menú
         </a>
