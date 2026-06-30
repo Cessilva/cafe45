@@ -296,7 +296,7 @@ function Hero() {
           Pedir en línea
         </a>
         <a
-          href="#servicios"
+          href="#menú"
           className="btn-conocer"
           style={{
             background: "transparent",
@@ -318,7 +318,7 @@ function Hero() {
               "var(--color-fog)")
           }
         >
-          Conocer más
+          Ir al menú
         </a>
       </div>
 
