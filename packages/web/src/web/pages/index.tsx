@@ -166,62 +166,14 @@ function Hero() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: `
-          radial-gradient(ellipse at 30% 50%, rgba(123,74,45,0.12) 0%, transparent 60%),
-          radial-gradient(ellipse at 70% 20%, rgba(92,107,74,0.1) 0%, transparent 50%),
-          var(--color-white)
-        `,
         padding: "120px clamp(16px, 5vw, 24px) 80px",
         position: "relative",
         overflow: "hidden",
       }}
+      className="hero-section"
     >
-      {/* Decorative circles */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: "15%",
-          left: "8%",
-          width: "clamp(100px, 20vw, 200px)",
-          height: "clamp(100px, 20vw, 200px)",
-          borderRadius: "50%",
-          border: "1px solid rgba(123,74,45,0.15)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          bottom: "10%",
-          right: "6%",
-          width: "clamp(160px, 30vw, 320px)",
-          height: "clamp(160px, 30vw, 320px)",
-          borderRadius: "50%",
-          border: "1px solid rgba(92,107,74,0.12)",
-          pointerEvents: "none",
-        }}
-      />
-
       {/* Badge */}
-      <div
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          background: "rgba(92,107,74,0.12)",
-          border: "1px solid rgba(92,107,74,0.25)",
-          borderRadius: 40,
-          padding: "6px 16px",
-          marginBottom: 28,
-          fontSize: "clamp(0.68rem, 1.5vw, 0.78rem)",
-          color: "var(--color-olive)",
-          fontWeight: 500,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-        }}
-      >
+      <div className="hero-badge">
         <Star size={12} fill="currentColor" />
         Café de Especialidad · Coyoacán
       </div>
@@ -310,6 +262,7 @@ function Hero() {
         </a>
         <a
           href="#servicios"
+          className="btn-conocer"
           style={{
             background: "transparent",
             color: "var(--color-espresso)",
