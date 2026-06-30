@@ -21,6 +21,8 @@ import {
   MapPinLineIcon,
 } from "../components/cafe-icons";
 
+const BASE = import.meta.env.BASE_URL;
+
 // ---------- Reveal hook ----------
 function useReveal() {
   useEffect(() => {
@@ -77,7 +79,7 @@ function Nav() {
           }}
         >
           <img
-            src="/logo-cafe45.png"
+            src={`${BASE}logo-cafe45.png`}
             alt="Café 45"
             style={{
               height: "clamp(36px, 5vw, 48px)",
@@ -1046,7 +1048,7 @@ function Footer() {
         {/* Brand */}
         <div>
           <img
-            src="/logo-cafe45.png"
+            src={`${BASE}logo-cafe45.png`}
             alt="Café 45"
             style={{
               height: "clamp(56px, 8vw, 72px)",
